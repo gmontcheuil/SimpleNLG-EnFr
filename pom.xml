@@ -1,0 +1,98 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
+	<!-- POM file to install lpl-praat.jar into a local maven repository:
+ 	     mvn install:install-file -Dfile=dist/lpl-praat.jar -DpomFile=praat.pom.xml
+	  AND to install sources:
+ 	     mvn install:install-file -Dfile=dist/lpl-praat-src.jar -DpomFile=praat.pom.xml -Dclassifier=sources
+	-->
+
+	<modelVersion>4.0.0</modelVersion>
+	<groupId>rali-udem</groupId>
+	<artifactId>simplenlg-enfr</artifactId>
+	<packaging>jar</packaging>
+	<version>1.1</version>
+
+	<!-- More details on the artifact -->
+	<name>SimpleNLG-EnFr</name>
+	<description>A bilingual English/French adaption of SimpleNLG v4.2</description>
+	<organization>
+		<name>RALI - Université de Montréal</name>
+		<url>http://rali.iro.umontreal.ca/rali/</url>
+	</organization>
+	<url>https://github.com/rali-udem/SimpleNLG-EnFr</url>
+	<!--licenses>TODO<-/licenses-->
+	<inceptionYear>2011</inceptionYear>
+	<developers>
+		<developer>
+			<id>vaudrypl</id>
+			<name>Pierre-Luc Vaudry</name>
+			<email>vaudrypl@iro.umontreal.ca</email>
+			<organization>RALI</organization>
+			<organizationUrl>http://rali.iro.umontreal.ca/rali/</organizationUrl>
+			<roles>
+				<role>architect</role>
+				<role>developer</role>
+			</roles>
+			<timezone>America/Montreal</timezone>
+		</developer>
+	</developers>
+	<contributors>
+	</contributors>
+
+	<properties>
+	</properties>
+
+	<repositories>
+	</repositories>
+
+	<dependencies>
+		<!-- JARs in the lib/ directory -->
+		<!-- (a) lexAccess2011dist.jar : A lexical access tool in the SPECIALIST Lexicon family
+			https://lexsrv3.nlm.nih.gov/LexSysGroup/Projects/lexAccess/2011/web/index.html
+		  -->
+		<!-- copied from simplenlg pom.xml -->
+		<dependency>
+			<groupId>gov.nih.nlm.nls.lexAccess.Api</groupId>
+			<artifactId>LexAccess2011dist</artifactId>
+			<version>0.0.1</version>
+			<scope>system</scope>
+			<systemPath>${basedir}/lib/lexAccess2011dist.jar</systemPath>
+		</dependency>
+
+		<!-- the others JARs didn't seem to be a dependency -->
+		<!-- (b) lexCheck2006api.jar : Check/validate the syntax and contents of Lexical record(s)
+			https://lexsrv3.nlm.nih.gov/LexSysGroup/Projects/lexCheck/current/web/index.html
+		  -->
+		<!-- idem lexAccess2011dist -->
+		<!--dependency>
+			<groupId>gov.nih.nlm.nls.lexCheck.Api</groupId>
+			<artifactId>lexCheck2006api</artifactId>
+			<version>0.0.1</version>
+			<scope>system</scope>
+			<systemPath>${basedir}/lib/lexCheck2006api.jar</systemPath>
+		</dependency-->
+		<!-- (c) lvg2011api.jar :  the Lexical Tools
+			https://lexsrv2.nlm.nih.gov/LexSysGroup/Projects/lvg/2011/web/index.html
+		  -->
+		<!--dependency>
+			<groupId>gov.nih.nlm.nls.lexicalTools</groupId>
+			<artifactId>lvg2011api</artifactId>
+			<version>0.0.1</version>
+			<scope>system</scope>
+			<systemPath>${basedir}/lib/lvg2011api.jar</systemPath>
+		</dependency-->
+
+
+
+		<!-- JUnit Test - version 4 (first simplenlg pom.xml use 4.4) -->
+		<dependency>
+			<groupId>junit</groupId>
+			<artifactId>junit</artifactId>
+			<version>4.4</version>
+			<scope>test</scope>
+		</dependency>
+	</dependencies>
+
+	<build>
+	</build>
+</project>
