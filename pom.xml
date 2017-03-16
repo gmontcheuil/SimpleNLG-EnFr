@@ -43,45 +43,23 @@
 	</properties>
 
 	<repositories>
+		<repository>
+			<id>clojars.org</id>
+			<url>http://clojars.org/repo</url>
+		</repository>
 	</repositories>
 
 	<dependencies>
 		<!-- JARs in the lib/ directory -->
-		<!-- (a) lexAccess2011dist.jar : A lexical access tool in the SPECIALIST Lexicon family
+		<!-- (a) lexaccess-dist : A lexical access tool in the SPECIALIST Lexicon family
 			https://lexsrv3.nlm.nih.gov/LexSysGroup/Projects/lexAccess/2011/web/index.html
+			Find the 2013 version in https://clojars.org/gov.nih.nlm.nls.lexaccess/lexaccess-dist
 		  -->
-		<!-- copied from simplenlg pom.xml -->
 		<dependency>
-			<groupId>gov.nih.nlm.nls.lexAccess.Api</groupId>
-			<artifactId>LexAccess2011dist</artifactId>
-			<version>0.0.1</version>
-			<scope>system</scope>
-			<systemPath>${basedir}/lib/lexAccess2011dist.jar</systemPath>
+			<groupId>gov.nih.nlm.nls.lexaccess</groupId>
+			<artifactId>lexaccess-dist</artifactId>
+			<version>2013</version>
 		</dependency>
-
-		<!-- the others JARs didn't seem to be a dependency -->
-		<!-- (b) lexCheck2006api.jar : Check/validate the syntax and contents of Lexical record(s)
-			https://lexsrv3.nlm.nih.gov/LexSysGroup/Projects/lexCheck/current/web/index.html
-		  -->
-		<!-- idem lexAccess2011dist -->
-		<!--dependency>
-			<groupId>gov.nih.nlm.nls.lexCheck.Api</groupId>
-			<artifactId>lexCheck2006api</artifactId>
-			<version>0.0.1</version>
-			<scope>system</scope>
-			<systemPath>${basedir}/lib/lexCheck2006api.jar</systemPath>
-		</dependency-->
-		<!-- (c) lvg2011api.jar :  the Lexical Tools
-			https://lexsrv2.nlm.nih.gov/LexSysGroup/Projects/lvg/2011/web/index.html
-		  -->
-		<!--dependency>
-			<groupId>gov.nih.nlm.nls.lexicalTools</groupId>
-			<artifactId>lvg2011api</artifactId>
-			<version>0.0.1</version>
-			<scope>system</scope>
-			<systemPath>${basedir}/lib/lvg2011api.jar</systemPath>
-		</dependency-->
-
 
 
 		<!-- JUnit Test - version 4 (first simplenlg pom.xml use 4.4) -->
