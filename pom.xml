@@ -72,5 +72,37 @@
 	</dependencies>
 
 	<build>
+		<plugins>
+			<!-- Attach source/javadoc : https://maven.apache.org/plugin-developers/cookbook/attach-source-javadoc-artifacts.html -->
+			<plugin>
+				<groupId>org.apache.maven.plugins</groupId>
+				<artifactId>maven-source-plugin</artifactId>
+				<executions>
+					<execution>
+						<id>attach-sources</id>
+						<goals>
+							<goal>jar</goal>
+						</goals>
+					</execution>
+				</executions>
+			</plugin>
+
+			<plugin>
+				<groupId>org.apache.maven.plugins</groupId>
+				<artifactId>maven-javadoc-plugin</artifactId>
+				<configuration>
+					<!-- Ignore (Java 8) javadoc warning, see https://stackoverflow.com/questions/39616344/how-to-disable-javadoc-warnings-in-maven-javadoc-plugin -->
+					<additionalparam>-Xdoclint:none</additionalparam>
+				</configuration>
+				<executions>
+					<execution>
+						<id>attach-javadocs</id>
+						<goals>
+							<goal>jar</goal>
+						</goals>
+					</execution>
+				</executions>
+			</plugin>
+		</plugins>
 	</build>
 </project>
